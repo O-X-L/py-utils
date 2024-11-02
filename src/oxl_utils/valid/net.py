@@ -1,4 +1,5 @@
-from ipaddress import ip_address, IPv4Address, IPv6Address, AddressValueError, IPv4Network, IPv6Network, NetmaskValueError
+from ipaddress import ip_address, IPv4Address, IPv6Address, AddressValueError, \
+    IPv4Network, IPv6Network, NetmaskValueError
 
 
 def valid_ip(ip: str) -> bool:

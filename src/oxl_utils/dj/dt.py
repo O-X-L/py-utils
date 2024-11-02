@@ -4,6 +4,7 @@ from datetime import datetime
 from pytz import utc, timezone
 
 
+# pylint: disable=W0707,R0801
 def datetime_from_db(dt: (datetime, None), tz: (timezone, str) = None) -> (datetime, None):
     if not isinstance(dt, datetime):
         return None

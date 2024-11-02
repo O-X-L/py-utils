@@ -1,5 +1,7 @@
 import pytest
 
+# pylint: disable=C0415
+
 
 @pytest.mark.parametrize('v, s', [
     ('1.1.1.1', True),

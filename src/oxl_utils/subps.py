@@ -5,7 +5,7 @@ from functools import cache
 
 from .log import log
 
-# pylint: disable=R0914
+# pylint: disable=R0914,R0912
 def process(
         cmd: (str, list), timeout_sec: int = None, shell: bool = False, timeout_shell: bool = True,
         cwd: Path = None, env: dict = None, env_inherit: bool = False, env_remove: list = None,

@@ -4,6 +4,7 @@ from datetime import datetime
 from pytz import timezone
 
 
+# pylint: disable=W0707,R0801
 def datetime_w_tz(tz: (timezone, str) = None) -> datetime:
     if tz in [None, '']:
         try:
