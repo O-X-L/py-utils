@@ -32,7 +32,6 @@ jobs:
           pip install -r requirements_build.txt >/dev/null
           pip install -r requirements.txt >/dev/null
 
-      # NOTE: timeout for running the app includes db migrations
       - name: Testing to build with PIP
         run: |
           cd /tmp

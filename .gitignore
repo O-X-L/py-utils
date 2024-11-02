@@ -1,2 +1,4 @@
 __pychache__
 venv/
+.idea/
+src/oxl_utils.egg-info
