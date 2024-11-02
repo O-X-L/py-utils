@@ -57,3 +57,17 @@ from oxl_utils.valid.dns import valid_domain
 # fix datetime timezone
 from oxl_utils.dj.dt import datetime_from_db
 ```
+
+## Crypto
+
+```python3
+# AES CBC
+## set secret
+from os import environ
+environ['CRYPTO_SECRET'] = '<YOUR-SECRET>'
+
+from oxl_utils.crypto.aes_cbc import encrypt
+from oxl_utils.crypto.aes_cbc import decrypt
+from oxl_utils.crypto.aes_cbc import encrypt_bytes
+from oxl_utils.crypto.aes_cbc import decrypt_bytes
+```

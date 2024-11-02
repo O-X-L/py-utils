@@ -1,5 +1,12 @@
 # Versions
 
+## 0.2
+
+* Crypto
+  * AES CBC
+
+----
+
 ## 0.1
 
 * State
