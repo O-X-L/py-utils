@@ -53,9 +53,7 @@ jobs:
 
       - name: Building
         run: |
-          git reset --hard
-          git ls-files . --exclude-standard --others | grep 'migrations' | xargs --no-run-if-empty rm
-
+          git reset --hard || true
           echo "${{ steps.version.outputs.TAG_NAME }}" > VERSION
           python3 -m build
 
