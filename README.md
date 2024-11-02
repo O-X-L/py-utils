@@ -11,12 +11,16 @@
 pip install oxl-utils
 ```
 
+----
+
 ## Data States
 
 ```python3
 from oxl_utils.state import is_set
 from oxl_utils.state import is_null
 ```
+
+----
 
 ## Network interaction
 
@@ -30,6 +34,8 @@ from oxl_utils.net import resolve_first_ip
 # check if a remote port is reachable
 from oxl_utils.net import is_port_open
 ```
+
+----
 
 ## Validators
 
@@ -46,17 +52,17 @@ from oxl_utils.valid.net import valid_net4
 from oxl_utils.valid.net import valid_net6
 from oxl_utils.valid.net import valid_public_ip
 from oxl_utils.valid.net import valid_asn
+from oxl_utils.valid.net import valid_port
+from oxl_utils.valid.net import get_ipv
 
 # domains
 from oxl_utils.valid.dns import valid_domain
+
+# uuid
+from oxl_utils.valid.uuid import valid_uuid4
 ```
 
-## Django
-
-```python3
-# fix datetime timezone
-from oxl_utils.dj.dt import datetime_from_db
-```
+----
 
 ## Crypto
 
@@ -70,4 +76,27 @@ from oxl_utils.crypto.aes_cbc import encrypt
 from oxl_utils.crypto.aes_cbc import decrypt
 from oxl_utils.crypto.aes_cbc import encrypt_bytes
 from oxl_utils.crypto.aes_cbc import decrypt_bytes
+```
+
+----
+
+## Processing
+
+```python3
+# subprocess wrapper
+from oxl_utils.subps import process
+## for read-only commands which output should be cached
+from oxl_utils.subps import process_cache
+
+# thread handling
+from oxl_utils.subps import wait_for_threads
+```
+
+----
+
+## Django
+
+```python3
+# fix datetime timezone
+from oxl_utils.dj.dt import datetime_from_db
 ```

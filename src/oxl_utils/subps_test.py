@@ -1,3 +1,6 @@
+from time import sleep
+from threading import Thread
+
 import pytest
 
 # pylint: disable=C0415
@@ -44,6 +47,10 @@ import pytest
             {'cmd': 'echo', 'empty_none': False},
             {'rc': 0, 'stdout': '', 'stderr': ''},
     ),
+    (
+            {'cmd': 'cat', 'shell': True, 'stdin': 'test123'},
+            {'rc': 0, 'stdout': 'test123', 'stderr': None},
+    ),
 ])
 def test_subps(kwargs: dict, s: dict):
     from .subps import process
@@ -55,3 +62,48 @@ def test_subps(kwargs: dict, s: dict):
             isinstance(s['stderr'], str) and
             r['stderr'].find(s['stderr']) != -1
     )
+
+
+def test_wait_for_threads():
+    from .subps import wait_for_threads
+
+    def _dummy_workload(s: int):
+        sleep(s)
+
+    threads = [
+        Thread(target=_dummy_workload, args=[2]),
+        Thread(target=_dummy_workload, args=[3]),
+    ]
+
+    for t in threads:
+        t.start()
+
+    wait_for_threads(threads)
+
+    for t in threads:
+        assert not t.is_alive()
+
+
+def test_wait_for_threads_timeout():
+    from .subps import wait_for_threads
+
+    def _dummy_workload(s: int):
+        sleep(s)
+
+    threads = [
+        Thread(target=_dummy_workload, args=[2]),
+        Thread(target=_dummy_workload, args=[3]),
+    ]
+
+    for t in threads:
+        t.start()
+
+    wait_for_threads(threads, timeout=1)
+
+    for t in threads:
+        assert t.is_alive()
+
+    wait_for_threads(threads)
+
+    for t in threads:
+        assert not t.is_alive()

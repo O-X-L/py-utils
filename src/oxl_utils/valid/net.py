@@ -88,3 +88,20 @@ def valid_public_ip(ip: str) -> bool:
 def valid_asn(asn: str) -> bool:
     asn = str(asn)
     return asn.isdigit() and 0 <= int(asn) <= 4_294_967_294
+
+
+def get_ipv(ip: str) -> int:
+    if valid_ip4(ip):
+        return 4
+
+    return 6
+
+
+def valid_port(p: (str, int)) -> bool:
+    if isinstance(p, str):
+        if not p.isnumeric():
+            return False
+
+        p = int(p)
+
+    return 0 < p < 65536

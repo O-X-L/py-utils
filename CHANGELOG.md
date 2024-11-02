@@ -5,6 +5,17 @@
 * Crypto
   * AES CBC
 
+* Validators
+  * UUID4
+
+  * IPs/Networks
+    * `valid_port`
+    * `get_ipv`
+
+* SubPS
+  * `process` - Stdin handling
+  * `wait_for_threads`
+
 ----
 
 ## 0.1
