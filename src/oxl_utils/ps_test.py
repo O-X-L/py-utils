@@ -53,7 +53,7 @@ import pytest
     ),
 ])
 def test_subps(kwargs: dict, s: dict):
-    from .subps import process
+    from .ps import process
     r = process(**kwargs)
     assert r['rc'] == s['rc']
     assert r['stdout'] == s['stdout']
@@ -65,7 +65,7 @@ def test_subps(kwargs: dict, s: dict):
 
 
 def test_wait_for_threads():
-    from .subps import wait_for_threads
+    from .ps import wait_for_threads
 
     def _dummy_workload(s: int):
         sleep(s)
@@ -85,7 +85,7 @@ def test_wait_for_threads():
 
 
 def test_wait_for_threads_timeout():
-    from .subps import wait_for_threads
+    from .ps import wait_for_threads
 
     def _dummy_workload(s: int):
         sleep(s)
