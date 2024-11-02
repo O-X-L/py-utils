@@ -84,12 +84,12 @@ from oxl_utils.crypto.aes_cbc import decrypt_bytes
 
 ```python3
 # subprocess wrapper
-from oxl_utils.subps import process
+from oxl_utils.ps import process
 ## for read-only commands which output should be cached
-from oxl_utils.subps import process_cache
+from oxl_utils.ps import process_cache
 
 # thread handling
-from oxl_utils.subps import wait_for_threads
+from oxl_utils.ps import wait_for_threads
 ```
 
 ----
