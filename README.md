@@ -3,6 +3,14 @@
 [![Lint](https://github.com/O-X-L/py-utils/actions/workflows/lint.yml/badge.svg)](https://github.com/O-X-L/py-utils/actions/workflows/lint.yml)
 [![Test](https://github.com/O-X-L/py-utils/actions/workflows/test.yml/badge.svg)](https://github.com/O-X-L/py-utils/actions/workflows/test.yml)
 
+[pypi.org](https://pypi.org/project/oxl-utils/)
+
+## Install
+
+```bash
+pip install oxl-utils
+```
+
 ## Data States
 
 ```python3
