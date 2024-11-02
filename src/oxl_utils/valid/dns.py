@@ -2,6 +2,7 @@ import re as regex
 
 from .base import _reg_match
 
+# source: https://validators.readthedocs.io/en/latest/_modules/validators/domain.html#domain
 MATCH_DOMAIN = regex.compile(
     r'^(([a-zA-Z]{1})|([a-zA-Z]{1}[a-zA-Z]{1})|'
     r'([a-zA-Z]{1}[0-9]{1})|([0-9]{1}[a-zA-Z]{1})|'
@@ -11,5 +12,4 @@ MATCH_DOMAIN = regex.compile(
 
 
 def valid_domain(value: str) -> bool:
-    # see: https://validators.readthedocs.io/en/latest/_modules/validators/domain.html#domain
     return _reg_match(reg=MATCH_DOMAIN, v=value)

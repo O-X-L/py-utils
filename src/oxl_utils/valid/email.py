@@ -4,7 +4,6 @@ from ..net import resolve_dns
 from .base import _reg_match
 from .dns import valid_domain
 
-# source: https://validators.readthedocs.io/en/latest/_modules/validators/email.html
 EMAIL_REGEX_USER = regex.compile(r"^[a-zA-Z0-9_+~\-\.]*$")
 
 
