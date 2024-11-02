@@ -25,6 +25,7 @@ from oxl_utils.net import is_port_open
 ```python3
 # validate email format
 from oxl_utils.valid.email import valid_email
+from oxl_utils.valid.email import has_mailserver
 
 # also check for valid MX record of e-mail domain
 from oxl_utils.valid.email import valid_email_dns
@@ -38,10 +39,8 @@ from oxl_utils.valid.net import valid_net6
 from oxl_utils.valid.net import valid_public_ip
 from oxl_utils.valid.net import valid_asn
 
+# domains
 from oxl_utils.valid.dns import valid_domain
-from oxl_utils.valid.email import valid_email
-from oxl_utils.valid.email import has_mailserver
-
 ```
 
 ## Django
