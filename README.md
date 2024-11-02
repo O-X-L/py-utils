@@ -1,5 +1,8 @@
 # Utils Collection
 
+[![Lint](https://github.com/O-X-L/py-utils/actions/workflows/lint.yml/badge.svg)](https://github.com/O-X-L/py-utils/actions/workflows/lint.yml)
+[![Test](https://github.com/O-X-L/py-utils/actions/workflows/test.yml/badge.svg)](https://github.com/O-X-L/py-utils/actions/workflows/test.yml)
+
 ## Data States
 
 ```python3
