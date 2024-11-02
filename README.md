@@ -7,6 +7,19 @@ from oxl_utils.state import is_set
 from oxl_utils.state import is_null
 ```
 
+## Network interactions
+
+```python3
+# dnspython wrapper
+from oxl_utils.net import resolve_dns
+
+# get first IP
+from oxl_utils.net import resolve_first_ip
+
+# check if a remote port is reachable
+from oxl_utils.net import is_port_open
+```
+
 ## Validators
 
 ```python3

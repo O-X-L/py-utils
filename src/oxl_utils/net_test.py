@@ -37,12 +37,13 @@ def test_dns(v: dict, s: dict):
 
 
 @pytest.mark.parametrize('v, s', [
-    ('one.one.one.one', '1.0.0.1'),
-    ('test.abc.sldjflsdkl.sdlfj', None),
+    ({'v': 'one.one.one.one'}, '1.0.0.1'),
+    ({'v': 'test.abc.sldjflsdkl.sdlfj'}, None),
+    ({'v': 'one.one.one.one', 'check': ['AAAA', 'A']}, '2606:4700:4700::1001'),
 ])
-def test_dns_first_ip(v: str, s: str):
+def test_dns_first_ip(v: dict, s: str):
     from .net import resolve_first_ip
-    assert resolve_first_ip(v) == s
+    assert resolve_first_ip(**v) == s
 
 
 @pytest.mark.parametrize('v, s', [

@@ -31,14 +31,17 @@ def resolve_dns(v: str, t: str = 'A', timeout: float = dns_resolver.timeout) -> 
         return []
 
 
-def resolve_first_ip(v: str) -> (str, None):
-    r = resolve_dns(v, t='A')
-    if len(r) > 0:
-        return r[0]
+CHECK_RECORDS = ['A', 'AAAA']
 
-    r = resolve_dns(v, t='AAAA')
-    if len(r) > 0:
-        return r[0]
+
+def resolve_first_ip(v: str, check: list = None) -> (str, None):
+    if check is None or not isinstance(check, list):
+        check = CHECK_RECORDS
+
+    for rtype in check:
+        r = resolve_dns(v, t=rtype)
+        if len(r) > 0:
+            return r[0]
 
     return None
 
