@@ -18,7 +18,7 @@ from oxl_utils.state import is_set
 from oxl_utils.state import is_null
 ```
 
-## Network interactions
+## Network interaction
 
 ```python3
 # dnspython wrapper
