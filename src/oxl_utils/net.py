@@ -17,6 +17,9 @@ dns_resolver.nameservers = environ[NS_ENV_KEY].split(',') if NS_ENV_KEY in envir
 
 
 def resolve_dns(v: str, t: str = 'A', timeout: float = dns_resolver.timeout) -> list[str]:
+    if timeout is None:
+        timeout = dns_resolver.timeout
+
     try:
         if t != 'PTR':
             r = [r.to_text() for r in dns_resolver.resolve(v, t, lifetime=timeout)]

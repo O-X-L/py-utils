@@ -7,7 +7,7 @@ from .dns import valid_domain
 EMAIL_REGEX_USER = regex.compile(r"^[a-zA-Z0-9_+~\-\.]*$")
 
 
-def has_mailserver(email: str, dns: bool = True) -> bool:
+def has_mailserver(email: str, dns: bool = True, timeout: float = 1.0) -> bool:
     if not isinstance(email, str):
         return False
 
@@ -15,7 +15,7 @@ def has_mailserver(email: str, dns: bool = True) -> bool:
         return True
 
     domain = email.split('@', 1)[1]
-    return len(resolve_dns(domain, t='MX')) > 0
+    return len(resolve_dns(domain, t='MX', timeout=timeout)) > 0
 
 
 def valid_email(email: str, dns: bool = False) -> bool:
