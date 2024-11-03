@@ -4,6 +4,7 @@ from pathlib import Path
 from os import environ, getcwd
 from functools import cache
 from threading import Thread
+from typing import Callable
 
 from .log import log
 
@@ -100,3 +101,28 @@ def wait_for_threads(threads: list[Thread], timeout: int = 600):
     while not threads_done and time() < break_time:
         threads_done = all(not t.is_alive() for t in threads)
         sleep(0.05)
+
+
+def process_list_in_threads(callback: Callable, to_process: list, key: str = 'item', parallel: int = 10):
+    next_idx = 0
+    last_idx = len(to_process) - 1
+    threads = []
+
+    while next_idx <= last_idx:
+        finished = [t for t in threads if not t.is_alive()]
+        for t in finished:
+            threads.remove(t)
+
+        if len(threads) >= parallel:
+            sleep(0.05)
+            continue
+
+        t = Thread(
+            target=callback,
+            kwargs={key: to_process[next_idx]},
+        )
+        threads.append(t)
+        t.start()
+        next_idx += 1
+
+    wait_for_threads(threads, timeout=3600)

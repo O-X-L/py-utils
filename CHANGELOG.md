@@ -1,5 +1,12 @@
 # Versions
 
+## 0.3
+
+* PS
+  * `process_list_in_threads`
+
+----
+
 ## 0.2
 
 * Crypto
@@ -12,7 +19,7 @@
     * `valid_port`
     * `get_ipv`
 
-* SubPS
+* PS
   * `process` - Stdin handling
   * `wait_for_threads`
 
@@ -41,6 +48,9 @@
     * `valid_net6`
     * `valid_public_ip`
     * `valid_asn`
+
+* PS
+  * `process`
 
 * Django
   * `datetime_from_db`

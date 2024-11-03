@@ -1,5 +1,5 @@
-from time import sleep
-from threading import Thread
+from time import sleep, time
+from threading import Thread, Lock
 
 import pytest
 
@@ -107,3 +107,22 @@ def test_wait_for_threads_timeout():
 
     for t in threads:
         assert not t.is_alive()
+
+
+def test_process_list_in_threads():
+    from .ps import process_list_in_threads
+    lock = Lock()
+    results = []
+
+    def _dummy_workload(s: int):
+        sleep(s)
+        with lock:
+            results.append(s)
+
+    start_time = time()
+    workload = [1, 1, 1, 1]
+    process_list_in_threads(callback=_dummy_workload, to_process=workload, key='s', parallel=4)
+    elapsed = time() - start_time
+
+    assert 1 < elapsed < 1.2
+    assert len(results) == 4
