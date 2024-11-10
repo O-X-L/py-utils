@@ -2,6 +2,7 @@
 
 [![Lint](https://github.com/O-X-L/py-utils/actions/workflows/lint.yml/badge.svg)](https://github.com/O-X-L/py-utils/actions/workflows/lint.yml)
 [![Test](https://github.com/O-X-L/py-utils/actions/workflows/test.yml/badge.svg)](https://github.com/O-X-L/py-utils/actions/workflows/test.yml)
+[![PyPI - Version](https://img.shields.io/pypi/v/oxl-utils?color=green)](https://pypi.org/project/oxl-utils/)
 
 [pypi.org](https://pypi.org/project/oxl-utils/)
 
